@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ <html lang="pt-BR">
+
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>CHATBOT - Atendimento</title>
+  <link rel="stylesheet" href="style_chat.css">
+  <link rel="stylesheet" href="styles/loading.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ </head>
+
+ <body>
+  <div id="chatbox" role="region" aria-label="Chat de atendimento ao cliente">
+   <div class="circle circle-top-left"></div>
+   <div class="circle circle-bottom-right"></div>
+   <div class="circle circle-background"></div>
+
+   <header>TWTransportes - Atendimento</header>
+
+   <div id="quick-questions" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: #f0f4f9;">
+    <button type="button" class="quick-btn">Qual o prazo de entrega?</button>
+    <button type="button" class="quick-btn">Quais são os métodos de pagamento?</button>
+    <button type="button" class="quick-btn">Quero rastrear meu pedido</button>
+    <button type="button" class="quick-btn">Horário de atendimento</button>
+   </div>
+
+   <div id="messages" aria-live="polite" aria-relevant="additions"></div>
+   <form id="input-area" aria-label="Área para enviar mensagens">
+    <input type="text" id="messageInput" placeholder="Digite sua mensagem..." aria-label="Mensagem de texto" autocomplete="off"
+     required />
+    <button type="submit" id="sendBtn" aria-label="Enviar mensagem" disabled>Enviar</button>
+   </form>
+  </div>
+  
+   
+
+ 
+
+  <script src="script.js"></script>
+ </body>
+
+ </html>

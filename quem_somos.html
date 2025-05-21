@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="styles/loading.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(window).on('load', function() {
+        $('.loader').fadeOut(1000);
+    });
+</script>
+<title>Sobre a Nossa Empresa</title>
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+ /* Estilos globais aplicados ao elemento <body> */
+body {
+  /* Define a lista de fontes a serem usadas para o texto.
+     O navegador tentará usar a primeira fonte da lista disponível no sistema do usuário.
+     'Segoe UI' é comum em Windows, Tahoma e Verdana são fontes sans-serif genéricas,
+     e 'sans-serif' é uma família de fontes genérica como último recurso. */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Define a cor de fundo da página como um tom de pêssego claro. */
+  background: #ffe6db;
+  /* Define a cor principal do texto como um cinza escuro para boa legibilidade. */
+  color: #333;
+  /* Define a altura da linha do texto como 1.6 vezes o tamanho da fonte,
+     melhorando a legibilidade ao adicionar espaço vertical entre as linhas. */
+  line-height: 1.6;
+  /* Define o modelo de layout como Flexbox, permitindo um layout flexível e responsivo. */
+  display: flex;
+  /* Define a direção dos itens flexíveis como coluna, organizando header, main e footer verticalmente. */
+  flex-direction: column;
+  /* Define a altura mínima do body para ser 100% da altura da viewport (janela do navegador),
+     garantindo que o fundo cubra toda a tela, mesmo com pouco conteúdo. */
+  min-height: 100vh;
+  /* Define a largura do body para ocupar 100% da largura do seu elemento pai. */
+  width: 100%;
+  /* Define a largura máxima do conteúdo do body para 1200 pixels em telas maiores,
+     evitando que o texto fique muito largo e difícil de ler. */
+  max-width: 1200px; /* Para telas grandes */
+  /* Define as margens superior e inferior como 0 e as margens laterais como 'auto',
+     o que centraliza horizontalmente o body na tela quando a largura for menor que max-width. */
+  margin: 0 auto;
+  /* Adiciona um espaçamento interno ao redor do conteúdo do body (1.5rem vertical, 2rem horizontal). */
+  padding: 1.5rem 2rem;
+}
+
+/* Estilos para o cabeçalho da página */
+header {
+  /* Define a cor de fundo do cabeçalho como um tom de vermelho. */
+  background: #d43535;
+  /* Define a cor do texto dentro do cabeçalho como branco para bom contraste. */
+  color: #fff;
+  /* Adiciona um espaçamento interno ao redor do conteúdo do cabeçalho (1.5rem vertical, 2rem horizontal). */
+  padding: 1.5rem 2rem;
+  /* Centraliza o texto dentro do cabeçalho. */
+  text-align: center;
+  /* Arredonda os cantos do cabeçalho, dando um visual mais suave. */
+  border-radius: 8px;
+  /* Adiciona uma sombra sutil abaixo do cabeçalho para criar uma sensação de profundidade. */
+  box-shadow: 0 4px 8px rgba(0,43,92,0.3);
+}
+
+/* Estilos para o título principal dentro do cabeçalho (<h1>) */
+header h1 {
+  /* Define um tamanho de fonte grande para o título. */
+  font-size: 15.0rem;
+  /* Adiciona uma pequena margem abaixo do título para separá-lo do subtítulo. */
+  margin-bottom: 0.3rem;
+  /* Aumenta o espaçamento entre as letras para um efeito estilizado ou melhor legibilidade. */
+  letter-spacing: 1.2px;
+}
+
+/* Estilos para o parágrafo (subtítulo) dentro do cabeçalho (<p>) */
+header p {
+  /* Define um tamanho de fonte ligeiramente menor para o subtítulo. */
+  font-size: 1.1rem;
+  /* Define a espessura da fonte como mais leve. */
+  font-weight: 300;
+  /* Define a cor do texto do subtítulo como um preto bem escuro. */
+  color: #08090a;
+}
+
+/* Estilos para a seção principal do conteúdo (<main>) */
+main {
+  /* Permite que este elemento cresça para ocupar o espaço vertical restante no container flexível (body). */
+  flex: 1;
+  /* Adiciona uma margem superior grande para separar o conteúdo principal do cabeçalho. */
+  margin-top: 4rem;
+  /* Garante que a seção principal ocupe toda a largura disponível. */
+  width: 100%;
+}
+
+/* Estilos para cada seção de conteúdo (<section>) */
+section {
+  /* Adiciona uma margem inferior para separar as seções verticalmente. */
+  margin-bottom: 3rem;
+}
+
+/* Estilos para o título de cada seção (<h2>) */
+section h2 {
+  /* Define um tamanho de fonte para os títulos das seções. */
+  font-size: 1.6rem;
+  /* Define a cor do título como um tom de vermelho, combinando com o cabeçalho. */
+  color: #e22424;
+  /* Adiciona uma margem abaixo do título da seção. */
+  margin-bottom: 0.75rem;
+  /* Adiciona uma borda inferior sólida de 3 pixels na cor vermelha, funcionando como um separador visual. */
+  border-bottom: 3px solid #e22424;
+  /* Adiciona um pequeno espaçamento interno abaixo do título, entre o texto e a borda. */
+  padding-bottom: 0.4rem;
+}
+
+/* Estilos para os parágrafos de texto dentro das seções (<p>) */
+section p {
+  /* Define o tamanho da fonte para o texto principal das seções. */
+  font-size: 1.1rem;
+  /* Adiciona uma margem abaixo de cada parágrafo para separá-los. */
+  margin-bottom: 1.25rem;
+  /* Justifica o texto, alinhando-o às margens esquerda e direita para criar um bloco de texto uniforme. */
+  text-align: justify;
+  /* Limita a largura máxima dos parágrafos para melhorar a legibilidade em telas maiores,
+     evitando linhas de texto muito longas. */
+  max-width: 900px;
+}
+
+/* Estilos para o container que envolve as imagens */
+.image-container {
+  /* Centraliza o conteúdo dentro deste container (as imagens). */
+  text-align: center;
+  /* Adiciona uma margem abaixo do container da imagem. */
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para as imagens dentro do container de imagem (<img>) */
+.image-container img {
+  /* Garante que a imagem não exceda a largura do seu container pai, tornando-a responsiva. */
+  max-width: 100%;
+  /* Mantém a proporção da imagem ao ajustar a largura. */
+  height: auto;
+  /* Arredonda os cantos da imagem. */
+  border-radius: 8px;
+  /* Adiciona uma sombra suave à imagem. */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  /* Define uma altura máxima para as imagens. */
+  max-height: 350px;
+  /* Garante que a imagem cubra todo o espaço do container, cortando as bordas se necessário
+     para manter a proporção e evitar distorções. */
+  object-fit: cover;
+}
+
+/* Estilos para o rodapé da página (<footer>) */
+footer {
+  /* Centraliza o texto do rodapé. */
+  text-align: center;
+  /* Define um tamanho de fonte menor para o rodapé. */
+  font-size: 1rem;
+  /* Define a cor do texto do rodapé como um cinza mais claro. */
+  color: #666;
+  /* Empurra o rodapé para a parte inferior do container flexível (body). */
+  margin-top: auto;
+  /* Adiciona um espaçamento interno vertical ao rodapé. */
+  padding: 0.75rem 0;
+  /* Impede que o usuário possa selecionar o texto do rodapé. */
+  user-select: none;
+}
+
+/* Media query para aplicar estilos específicos em telas com largura máxima de 600 pixels (dispositivos móveis) */
+@media (max-width: 600px) {
+  /* Estilos aplicados ao body em telas pequenas */
+  body {
+    /* Limita a largura máxima do body para se adequar a telas menores. */
+    max-width: 350px;
+    /* Reduz o espaçamento interno do body para telas menores. */
+    padding: 1rem 1rem;
+    /* Garante que o body ocupe toda a altura da tela. */
+    height: 100vh;
+    /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura da tela. */
+    overflow-y: auto;
+  }
+
+  /* Reduz o tamanho da fonte do título principal no cabeçalho em telas pequenas. */
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  /* Reduz o tamanho da fonte do parágrafo no cabeçalho em telas pequenas. */
+  header p {
+    font-size: 0.95rem;
+  }
+
+  /* Reduz o tamanho da fonte dos títulos das seções em telas pequenas. */
+  section h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Reduz o tamanho da fonte dos parágrafos das seções e garante que ocupem toda a largura disponível em telas pequenas. */
+  section p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Reduz a altura máxima das imagens em telas pequenas. */
+  .image-container img {
+    max-height: 200px;
+  }
+}
+  
+</style>
+</head>
+<body>
+  <header>
+    <i class="fa-solid fa-truck-fast" id="nav_Logo">TWtransportes</i>
+    <p>Inovando para o seu futuro</p>
+  </header>
+  <main>
+    <section>
+      <h2>Sobre Nós</h2>
+      <p>Na TWtransportes, entendemos que a logística vai muito além do simples transporte de mercadorias. Somos seus parceiros estratégicos, dedicados a otimizar sua cadeia de suprimentos e impulsionar o seu sucesso.<br/><br/>
+
+Nossa jornada é pautada pela paixão por soluções inteligentes e eficientes. Com  91 anos de experiência no mercado, construímos uma reputação sólida baseada na confiabilidade, agilidade e no compromisso com a satisfação de nossos clientes.<br/></p>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Equipe da empresa" />
+      </div>
+    </section>
+    <section>
+      <h2>Nossos Valores</h2>
+      <p>A logística é a espinha dorsal de qualquer negócio que envolva a movimentação de bens. Vai muito além do transporte, abrangendo o planejamento, a execução e o controle eficiente do fluxo de mercadorias, desde a origem até o consumidor final.
+
+Uma logística bem estruturada otimiza custos, agiliza entregas, garante a satisfação do cliente e impulsiona a competitividade da sua empresa. Investir em soluções logísticas inteligentes significa construir uma base sólida para o crescimento e o sucesso no mercado. Em resumo, a logística é a engrenagem essencial que faz o seu negócio girar com eficiência.</p>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=600&q=80" alt="Valores da empresa" />
+      </div>
+    </section>
+    <section>
+      <h2>Nossos Serviços</h2>
+      <p>Simplificamos sua logística com soluções completas em transporte, armazenagem e distribuição. Conte com nossa expertise para otimizar sua cadeia de suprimentos e impulsionar o crescimento do seu negócio. Oferecemos serviços personalizados para atender às suas necessidades específicas, garantindo eficiência e confiabilidade em cada etapa.</p>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=600&q=80" alt="Serviços da empresa" />
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 PI. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
+

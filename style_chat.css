@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+
+ /* Estilos globais para o body e html */
+ body,
+ html {
+  margin: 0; /* Remove as margens padrão do body e html */
+  padding: 0; /* Remove o preenchimento padrão do body e html */
+  height: 100%; /* Garante que body e html ocupem toda a altura da janela */
+  font-family: 'Oswald', sans-serif; /* Define a fonte padrão para o texto */
+  background: #ffe6db; /* Define a cor de fundo da página */
+  display: flex; /* Usa flexbox para alinhar o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+ }
+
+ /* Estilos para a chatbox */
+ #chatbox {
+  display: flex; /* Usa flexbox para organizar os elementos internos */
+  flex-direction: column; /* Organiza os elementos internos verticalmente (um abaixo do outro) */
+  width: 650px; /* Define uma largura fixa para a chatbox */
+  max-height: 800px; /* Define uma altura máxima para a chatbox */
+  height: 800px; /* Define uma altura fixa para a chatbox */
+  background: #ffe6db; /* Define a cor de fundo da chatbox como branco */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra suave à chatbox */
+  border-radius: 14px; /* Arredonda os cantos da chatbox */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse as bordas da chatbox */
+ }
+
+ /* Estilos para o cabeçalho da chatbox */
+ header {
+  background: #cc0000; /* Define a cor de fundo do cabeçalho como vermelho */
+  color: rgb(241, 241, 241); /* Define a cor do texto do cabeçalho como um tom escuro */
+  padding: 16px 20px; /* Adiciona preenchimento interno ao cabeçalho */
+  font-size: 1.50rem; /* Define o tamanho da fonte do cabeçalho */
+  font-weight: 700; /* Define o peso da fonte do cabeçalho como negrito */
+  text-align: center; /* Alinha o texto do cabeçalho ao centro */
+  user-select: none; /* Impede que o usuário selecione o texto do cabeçalho */
+ }
+
+ /* Estilos para a área de mensagens */
+ #messages {
+  flex: 1; /* Permite que a área de mensagens cresça para ocupar o espaço restante */
+  padding: 20px; /* Adiciona preenchimento interno à área de mensagens */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando o conteúdo excede a altura */
+  background: #eaeefc; /* Define a cor de fundo da área de mensagens */
+ }
+
+ /* Estilos para cada mensagem */
+ .message {
+  max-width: 80%; /* Define uma largura máxima para as mensagens */
+  margin-bottom: 12px; /* Adiciona uma margem inferior para separar as mensagens */
+  padding: 10px 14px; /* Adiciona preenchimento interno às mensagens */
+  border-radius: 20px; /* Arredonda os cantos das mensagens */
+  position: relative; /* Permite o posicionamento relativo de elementos dentro da mensagem */
+  clear: both; /* Impede que elementos flutuantes (como outras mensagens) afetem o layout */
+  font-size: 1.0rem; /* Define o tamanho da fonte das mensagens */
+  line-height: 1.4; /* Define a altura da linha das mensagens */
+ }
+
+ /* Estilos para mensagens do usuário */
+ .user-message {
+  background: #111213; /* Define a cor de fundo das mensagens do usuário como um tom escuro */
+  color: white; /* Define a cor do texto das mensagens do usuário como branco */
+  margin-left: auto; /* Alinha as mensagens do usuário à direita */
+  border-bottom-right-radius: 6px; /* Arredonda apenas o canto inferior direito das mensagens do usuário */
+ }
+
+ /* Estilos para mensagens do bot */
+ .bot-message {
+  background: #fff; /* Define a cor de fundo das mensagens do bot como branco */
+  color: #333; /* Define a cor do texto das mensagens do bot como um tom escuro */
+  border: 2px solid #ddd; /* Adiciona uma borda às mensagens do bot */
+  border-bottom-left-radius: 6px; /* Arredonda apenas o canto inferior esquerdo das mensagens do bot */
+ }
+
+ /* Estilos para a área de entrada de texto */
+ #input-area {
+  display: flex; /* Usa flexbox para organizar os elementos internos (input e botão) */
+  border-top: 1px solid #9b9b9b; /* Adiciona uma borda superior à área de entrada */
+  background: #2b2a2a; /* Define a cor de fundo da área de entrada */
+ }
+
+ /* Estilos para o campo de texto */
+ #input-area input[type="text"] {
+  flex: 1; /* Permite que o campo de texto cresça para ocupar o espaço restante */
+  border: none; /* Remove a borda padrão do input */
+  padding: 16px 18px; /* Adiciona preenchimento interno ao campo de texto */
+  font-size: 1rem; /* Define o tamanho da fonte do texto digitado */
+  outline: none; /* Remove a borda de foco padrão ao clicar no input */
+  border-radius: 0 0 0 12px; /* Arredonda apenas o canto inferior esquerdo do input */
+ }
+
+ /* Estilos para o botão de enviar */
+ #input-area button {
+  background: #cc0000; /* Define a cor de fundo do botão como vermelho */
+  border: none; /* Remove a borda padrão do botão */
+  color: white; /* Define a cor do texto do botão como branco */
+  padding: 0 20px; /* Adiciona preenchimento interno ao botão */
+  cursor: pointer; /* Muda o cursor para uma mãozinha ao passar sobre o botão */
+  font-size: 1rem; /* Define o tamanho da fonte do texto do botão */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo ao passar o mouse */
+  border-radius: 0 0 12px 0; /* Arredonda apenas o canto inferior direito do botão */
+ }
+
+ /* Estilos para o botão de enviar desabilitado */
+ #input-area button:disabled {
+  background: #dc5a5a; /* Define uma cor de fundo diferente para o botão quando desabilitado */
+  cursor: not-allowed; /* Muda o cursor para "não permitido" ao passar sobre o botão desabilitado */
+ }
+
+ /* Estilos para o botão de enviar quando hover (não desabilitado) */
+ #input-area button:hover:not(:disabled) {
+  background: #a30000; /* Define uma cor de fundo mais escura ao passar o mouse sobre o botão habilitado */
+ }
+
+ /* Estilos para a barra de rolagem */
+ #messages::-webkit-scrollbar {
+  width: 7px; /* Define a largura da barra de rolagem (para navegadores WebKit como Chrome e Safari) */
+ }
+
+ #messages::-webkit-scrollbar-thumb {
+  background-color: #cc0000; /* Define a cor do "polegar" da barra de rolagem */
+  border-radius: 4px; /* Arredonda os cantos do "polegar" da barra de rolagem */
+ }
+
+ /* Estilos para os botões de perguntas rápidas */
+ .quick-btn {
+  background: #ffffff; /* Define a cor de fundo dos botões de perguntas rápidas como branco */
+  border: 1px solid #cc0000; /* Adiciona uma borda aos botões de perguntas rápidas */
+  border-radius: 16px; /* Arredonda os cantos dos botões de perguntas rápidas */
+  padding: 6px 12px; /* Adiciona preenchimento interno aos botões de perguntas rápidas */
+  color: #cc0000; /* Define a cor do texto dos botões de perguntas rápidas */
+  cursor: pointer; /* Muda o cursor para uma mãozinha ao passar sobre os botões */
+  font-size: 0.85rem; /* Define um tamanho de fonte menor para os botões de perguntas rápidas */
+  transition: background 0.2s, color 0.2s; /* Adiciona transições suaves para a cor de fundo e texto ao passar o mouse */
+ }
+
+ /* Estilos para os botões de perguntas rápidas no hover */
+ .quick-btn:hover {
+  background: #cc0000; /* Define a cor de fundo ao passar o mouse sobre os botões */
+  color: white; /* Define a cor do texto ao passar o mouse sobre os botões */
+ }
+
+ /* Animação e estilos para os círculos decorativos */
+ @keyframes pulse {
+  0% {
+   transform: scale(3.8); /* Início da animação: escala normal */
+   opacity: 0.9; /* Opacidade inicial */
+  }
+
+  50% {
+   transform: scale(4.1); /* No meio da animação: aumenta um pouco a escala */
+   opacity: 0.18; /* Aumenta um pouco a opacidade */
+  }
+
+  100% {
+   transform: scale(3.8); /* Fim da animação: volta à escala normal */
+   opacity: 0.9; /* Volta à opacidade inicial */
+  }
+ }
+
+ .circle {
+  position: absolute; /* Permite posicionar os círculos em qualquer lugar dentro do seu container posicionado */
+  border-radius: 50%; /* Torna os elementos circulares */
+  opacity: 0.3; /* Define a opacidade inicial dos círculos */
+  animation: pulse 6s ease-in-out infinite; /* Aplica a animação 'pulse' com duração de 6 segundos, suavização ease-in-out e repetição infinita */
+  will-change: transform, opacity; /* Informa ao navegador que essas propriedades vão mudar para otimizar a animação */
+ }
+
+ .circle-top-left {
+  width: 300px; /* Define a largura do círculo */
+  height: 300px; /* Define a altura do círculo */
+  background-color: #ff6f61; /* Define a cor de fundo do círculo */
+  top: 10%; /* Posiciona o topo do círculo a 10% do topo do seu container */
+  left: 10%; /* Posiciona a esquerda do círculo a 10% da esquerda do seu container */
+  animation: slideTopLeft 8s linear infinite; /* Aplica a animação 'slideTopLeft' com duração de 8 segundos, velocidade constante e repetição infinita */
+ }
+
+ .circle-bottom-right {
+  width: 400px; /* Define a largura do círculo */
+  height: 400px; /* Define a altura do círculo */
+  background-color: #6b5b95; /* Define a cor de fundo do círculo */
+  bottom: 5%; /* Posiciona a parte inferior do círculo a 5% da parte inferior do seu container */
+  right: 5%; /* Posiciona a direita do círculo a 5% da direita do seu container */
+  animation: slideBottomRight 10s linear infinite; /* Aplica a animação 'slideBottomRight' com duração de 10 segundos, velocidade constante e repetição infinita */
+ }
+
+ .circle-background {
+  width: 200px; /* Define a largura do círculo */
+  height: 200px; /* Define a altura do círculo */
+  background-color: #88b04b; /* Define a cor de fundo do círculo */
+  top: 70%; /* Posiciona o topo do círculo a 70% do topo do seu container */
+  left: 20%; /* Posiciona a esquerda do círculo a 20% da esquerda do seu container */
+  transform: translate(0, 0); /* Mantém o círculo na sua posição inicial após o posicionamento */
+  animation: slideBackground 12s linear infinite; /* Aplica a animação 'slideBackground' com duração de 12 segundos, velocidade constante e repetição infinita */
+ }
+
+ @keyframes slideTopLeft {
+  0% {
+   transform: translate(0, 0); /* Início da animação: sem deslocamento */
+  }
+
+  50% {
+   transform: translate(25px, 25px); /* No meio da animação: desloca 10px para a direita e 10px para baixo */
+  }
+
+  100% {
+   transform: translate(0, 0); /* Fim da animação: volta à posição inicial */
+  }
+ }
+
+ @keyframes slideBottomRight {
+  0% {
+   transform: translate(0, 0); /* Início da animação: sem deslocamento */
+  }
+
+  50% {
+   transform: translate(-1px, -15px); /* No meio da animação: desloca 10px para a esquerda e 10px para cima */
+  }
+
+  100% {
+   transform: translate(0, 0); /* Fim da animação: volta à posição inicial */
+  }
+ }
+
+ @keyframes slideBackground {
+  0% {
+   transform: translate(0, 0); /* Início da animação: sem deslocamento */
+  }
+
+  50% {
+   transform: translate(15px, -15px); /* No meio da animação: desloca 5px para a direita e 5px para cima */
+  }
+
+  100% {
+   transform: translate(0, 0); /* Fim da animação: volta à posição inicial */
+  }
+ }
+
+ /* Ajustes para dispositivos móveis */
+ @media (max-width: 400px) {
+  #chatbox {
+   width: 100vw; /* Em telas menores, a chatbox ocupa toda a largura da tela */
+   border-radius: 0; /* Remove as bordas arredondadas em telas menores */
+   height: 100vh; /* Em telas menores, a chatbox ocupa toda a altura da tela */
+   max-height: 100vh; /* Define uma altura máxima igual à altura para evitar rolagem desnecessária */
+  }
+
+ }
+ @media (max-width: 1829px) {
+  .circle-top-left {
+    width: 210px;
+    height: 210px;
+  }
+
+  .circle-bottom-right {
+    width: 280px;
+    height: 280px;
+  }
+
+  .circle-background {
+    width: 140px;
+    height: 140px;
+  }
+ }
+
+ @media (max-width: 1605px)  {
+  .circle-top-left,
+  .circle-bottom-right,
+  .circle-background {
+    display: none; /* Completely removes the circles from the layout */
+  }
+ }
